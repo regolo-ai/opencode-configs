@@ -1,0 +1,216 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "manual",
+  "model": "regolo/qwen3.5-122b",
+  "small_model": "regolo/qwen3-coder-next",
+  "provider": {
+    "regolo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Regolo",
+      "options": {
+        "name": "Regolo",
+        "baseURL": "https://api.regolo.ai/v1",
+        "timeout": 1200000,
+        "chunkTimeout": 600000,
+        "headers": {
+          "Accept": "application/json",
+          "Authorization": "Bearer {env:REGOLOAI_API_KEY}"
+        }
+      },
+      "models": {
+        "gpt-oss-120b": {
+          "id": "gpt-oss-120b",
+          "name": "gpt-oss-120b",
+          "tools": true,
+          "cost": {
+            "input": 1,
+            "output": 4.2
+          },
+          "limit": {
+            "context": 120000,
+            "output": 90000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
+        },
+        "mistral-small-4-119b": {
+          "id": "mistral-small-4-119b",
+          "name": "mistral-small-4-119b",
+          "tools": true,
+          "cost": {
+            "input": 0.5,
+            "output": 2.1
+          },
+          "limit": {
+            "context": 120000,
+            "output": 120000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
+        },
+        "minimax-m2.5": {
+          "id": "minimax-m2.5",
+          "name": "minimax-m2.5",
+          "tools": true,
+          "cost": {
+            "input": 0.6,
+            "output": 3.8
+          },
+          "limit": {
+            "context": 130000,
+            "output": 130000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
+        },
+        "qwen3.5-122b": {
+          "id": "qwen3.5-122b",
+          "name": "qwen3.5-122b",
+          "tools": true,
+          "cost": {
+            "input": 1,
+            "output": 4.2
+          },
+          "limit": {
+            "context": 120000,
+            "output": 120000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
+        },
+        "qwen3-coder-next": {
+          "id": "qwen3-coder-next",
+          "name": "qwen3-coder-next",
+          "reasoning": true,
+          "tool_call": true,
+          "tools": true,
+          "limit": {
+            "context": 240000,
+            "output": 120000
+          },
+          "cost": {
+            "input": 0.5,
+            "output": 2
+          },
+          "options": {
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "temperature": 0.5,
+            "top_p": 0.95,
+            "top_k": 40,
+            "repetition_penalty": 1.05
+          }
+        }
+      }
+    }
+  },
+  "permission": {
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "edit": "allow",
+    "write": "allow",
+    "list": "allow",
+    "skill": "allow",
+    "webfetch": "allow",
+    "question": "allow"
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "watcher": {
+    "ignore": [
+      "node_modules/",
+      "dist/",
+      ".cargo/",
+      "target/",
+      ".git/**",
+      "*cache*",
+      ".sisyphus",
+      ".venv",
+      "venv",
+      "target"
+    ]
+  },
+  "plugin": [
+    "oh-my-opencode@latest",
+    "@franlol/opencode-md-table-formatter@latest"
+  ],
+  "autoupdate": true,
+  "experimental": {
+    "openTelemetry": false
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "grep_app": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
+    },
+    "websearch": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa",
+      "enabled": true
+    },
+    "sequentialthinking": {
+      "type": "remote",
+      "url": "https://remote.mcpservers.org/sequentialthinking/mcp",
+      "enabled": true
+    },
+    "fetch": {
+      "type": "remote",
+      "url": "https://remote.mcpservers.org/fetch/mcp",
+      "enabled": true
+    },
+    "deepwiki": {
+      "type": "remote",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "enabled": true
+    }
+  }
+}
