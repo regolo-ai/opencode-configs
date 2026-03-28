@@ -51,6 +51,10 @@
             "input": 0.5,
             "output": 2.1
           },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
           "limit": {
             "context": 120000,
             "output": 120000
@@ -100,6 +104,10 @@
           "cost": {
             "input": 1,
             "output": 4.2
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
           },
           "limit": {
             "context": 120000,
