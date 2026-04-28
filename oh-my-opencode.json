@@ -23,7 +23,7 @@
       "model": "regolo/mistral-small-4-119b"
     },
     "momus": {
-      "model": "regolo/qwen3.6-27b"
+      "model": "regolo/mistral-small-4-119b"
     },
     "sisyphus": {
       "model": "regolo/minimax-m2.5"
