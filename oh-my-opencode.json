@@ -40,7 +40,7 @@
       "model": "regolo/mistral-small-4-119b"
     },
     "artistry": {
-      "model": "regolo/minimax-m2.5"
+      "model": "regolo/gemma4-31b"
     },
     "quick": {
       "model": "regolo/qwen3.6-27b"
@@ -78,6 +78,7 @@
       "regolo/qwen3.5-122b": 8,
       "regolo/qwen3.6-27b": 10,
       "regolo/gpt-oss-120b": 5,
+      "regolo/gemma4-31b": 5
     }
   },
   "notification": {
