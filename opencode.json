@@ -252,11 +252,6 @@
       "url": "https://mcp.exa.ai/mcp",
       "enabled": true
     },
-    "jina": {
-      "type": "remote",
-      "url": "https://mcp.jina.ai/",
-      "enabled": true
-    },
     "deepwiki": {
       "type": "remote",
       "url": "https://mcp.deepwiki.com/mcp",
