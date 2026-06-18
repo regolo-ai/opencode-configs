@@ -106,31 +106,6 @@
             "temperature": 0.7
           }
         },
-        "minimax-m2.5": {
-          "id": "minimax-m2.5",
-          "name": "minimax-m2.5",
-          "tools": true,
-          "cost": {
-            "input": 0.6,
-            "output": 3.8
-          },
-          "limit": {
-            "context": 130000,
-            "output": 130000
-          },
-          "options": {
-            "reasoningEffort": "high",
-            "textVerbosity": "low",
-            "reasoningSummary": "auto",
-            "include": [
-              "reasoning.encrypted_content"
-            ],
-            "parallel_tool_calls": true,
-            "tool_choice": "auto",
-            "thinking": true,
-            "temperature": 0.7
-          }
-        },
         "qwen3.5-122b": {
           "id": "qwen3.5-122b",
           "name": "qwen3.5-122b",
@@ -229,7 +204,10 @@
     "list": "allow",
     "skill": "allow",
     "webfetch": "allow",
-    "question": "allow"
+    "question": "allow",
+    "external_directory": {
+      "/tmp/**": "allow"
+    }
   },
   "compaction": {
     "auto": true,
@@ -249,11 +227,10 @@
     ]
   },
   "plugin": [
-    "oh-my-openagent@3.17.4",
     "@franlol/opencode-md-table-formatter@0.0.6",
-    "opencode-agent-skills@0.6.5",
-    "opencode-auto-resume@1.0.10",
-    "opencode-plugin-auto-update@0.3.1"
+    "opencode-auto-resume@latest",
+    "opencode-plugin-auto-update@latest",
+    "@tarquinen/opencode-smart-title"
   ],
   "autoupdate": true,
   "experimental": {
@@ -272,17 +249,12 @@
     },
     "websearch": {
       "type": "remote",
-      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa",
+      "url": "https://mcp.exa.ai/mcp",
       "enabled": true
     },
-    "sequentialthinking": {
+    "jina": {
       "type": "remote",
-      "url": "https://remote.mcpservers.org/sequentialthinking/mcp",
-      "enabled": true
-    },
-    "fetch": {
-      "type": "remote",
-      "url": "https://remote.mcpservers.org/fetch/mcp",
+      "url": "https://mcp.jina.ai/",
       "enabled": true
     },
     "deepwiki": {
@@ -293,7 +265,7 @@
   },
   "agent": {
     "compaction": {
-      "model": "regolo/qwen3.5-122b"
+      "model": "regolo/gpt-oss-120b"
     }
   }
 }
