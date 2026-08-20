@@ -52,9 +52,9 @@
             "temperature": 0.7
           }
         },
-        "glm5.2-beta": {
-          "id": "glm5.2-beta",
-          "name": "glm5.2-beta",
+        "glm5.2": {
+          "id": "glm5.2",
+          "name": "glm5.2",
           "tools": true,
           "cost": {
             "input": 2,
@@ -249,9 +249,7 @@
     ]
   },
   "plugin": [
-    "@franlol/opencode-md-table-formatter@0.0.6",
     "opencode-auto-resume@latest",
-    "opencode-plugin-auto-update@latest",
     "@tarquinen/opencode-smart-title"
   ],
   "autoupdate": true,
