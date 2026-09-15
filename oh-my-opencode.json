@@ -71,10 +71,8 @@
     "defaultConcurrency": 10,
     "staleTimeoutMs": 180000,
     "modelConcurrency": {
-      "zai-coding-plan/glm-5": 2,
-      "zai-coding-plan/glm-5.1": 2,
+      "regolo/glm-5.2": 2,
       "regolo/mistral-small-4-119b": 8,
-      "regolo/minimax-m2.5": 8,
       "regolo/qwen3.5-122b": 8,
       "regolo/qwen3.6-27b": 10,
       "regolo/gpt-oss-120b": 5,

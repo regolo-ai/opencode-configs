@@ -8,38 +8,21 @@ Configuration files for [OpenCode](https://opencode.ai/) using the [Regolo AI](h
 | File | Description |
 |------|-------------|
 | `opencode.json` | Main OpenCode configuration with Regolo provider setup, MCP servers, and permissions |
-| `oh-my-opencode.json` | Oh-My-OpenCode plugin configuration with agent model assignments and categories |
+| `oh-my-opencode.json` | Oh-My-OpenAgent plugin configuration with agent model assignments and categories |
+| `oh-my-opencode-slim.json` | Oh-My-OpenCode-Slim plugin configuration with agent model assignments and categories |
 
 ## Features
 
 ### Models Configured
 
-- **qwen3.5-122b** - Main reasoning model
-- **qwen3-coder-next** - Fast coding model (240k context)
-- **mistral-small-4-119b** - Balanced model
-- **minimax-m2.5** - Large context model (130k)
-- **gpt-oss-120b** - Alternative reasoning model
+The best for coding updated based on the Regolo list.
 
 ### MCP Servers Enabled
 
 - **context7** - Official documentation lookup
 - **grep_app** - Real-world code examples search
 - **websearch** (Exa) - Web search capabilities
-- **sequentialthinking** - Structured reasoning
-- **fetch** - URL content retrieval
 - **deepwiki** - Repository knowledge extraction
-
-### Agents (via oh-my-opencode)
-
-| Agent | Model | Purpose |
-|-------|-------|---------|
-| sisyphus | minimax-m2.5 | Main orchestrator |
-| oracle | qwen3.5-122b | Read-only consultation |
-| librarian | qwen3.5-122b | External documentation |
-| explore | qwen3-coder-next | Codebase exploration |
-| prometheus | minimax-m2.5 | Planning |
-| metis | mistral-small-4-119b | Pre-planning analysis |
-| momus | qwen3-coder-next | Quality review |
 
 ## Setup
 
@@ -75,4 +58,5 @@ You can use the [Andrej Karpathy-style guidelines](https://github.com/forrestcha
 
 - [OpenCode](https://opencode.ai/) installed
 - [Regolo AI](https://regolo.ai/) account and API key
-- [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) plugin (auto-installed via config)
+- [oh-my-openagent](https://github.com/code-yeongyu/oh-my-opencode) plugin
+- [oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) plugin (auto-installed via config)
