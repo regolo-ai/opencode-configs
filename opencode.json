@@ -74,6 +74,62 @@
             "temperature": 0.7
           }
         },
+        "deepseek-v4.1-flash": {
+          "id": "deepseek-v4.1-flash",
+          "name": "deepseek-v4.1-flash",
+          "tools": true,
+          "cost": {
+            "input": 0.45,
+            "output": 1.8
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 750000,
+            "output": 96000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
+        },
+        "gpt-oss-20b": {
+          "id": "gpt-oss-20b",
+          "name": "gpt-oss-20b",
+          "tools": true,
+          "cost": {
+            "input": 1,
+            "output": 4.2
+          },
+          "limit": {
+            "context": 120000,
+            "output": 90000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
+        },
         "gpt-oss-120b": {
           "id": "gpt-oss-120b",
           "name": "gpt-oss-120b",
@@ -108,37 +164,13 @@
             "output": 2.1
           },
           "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
-          },
-          "limit": {
-            "context": 120000,
-            "output": 120000
-          },
-          "options": {
-            "reasoningEffort": "high",
-            "textVerbosity": "low",
-            "reasoningSummary": "auto",
-            "include": [
-              "reasoning.encrypted_content"
+            "input": [
+              "text",
+              "image"
             ],
-            "parallel_tool_calls": true,
-            "tool_choice": "auto",
-            "thinking": true,
-            "temperature": 0.7
-          }
-        },
-        "qwen3.5-122b": {
-          "id": "qwen3.5-122b",
-          "name": "qwen3.5-122b",
-          "tools": true,
-          "cost": {
-            "input": 1,
-            "output": 4.2
-          },
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 120000,
@@ -190,6 +222,40 @@
             "thinking": true,
             "temperature": 0.7
           }
+        },
+        "qwen3.5-122b": {
+          "id": "qwen3.5-122b",
+          "name": "qwen3.5-122b",
+          "tools": true,
+          "cost": {
+            "input": 1,
+            "output": 4.2
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 120000,
+            "output": 120000
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "textVerbosity": "low",
+            "reasoningSummary": "auto",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "thinking": true,
+            "temperature": 0.7
+          }
         }
       }
     }
@@ -208,9 +274,13 @@
       "/tmp/**": "allow"
     }
   },
+  "tools": {
+    "websearch": true,
+    "codesearch": true
+  },
   "compaction": {
-    "auto": true,
-    "prune": true
+    "auto": false,
+    "prune": false
   },
   "watcher": {
     "ignore": [
@@ -226,8 +296,16 @@
     ]
   },
   "plugin": [
-    "opencode-auto-resume@latest",
-    "@tarquinen/opencode-smart-title"
+    "oh-my-opencode-slim@3.0.7",
+    "@cortexkit/aft-opencode@0.66.0",
+    [
+      "opencode-auto-resume@1.2.9",
+      {
+        "subagentNativeCompactionEnabled": true
+      }
+    ],
+    "@cortexkit/opencode-magic-context@0.49.72",
+    "@tarquinen/opencode-smart-title@0.1.7"
   ],
   "autoupdate": true,
   "experimental": {
@@ -239,25 +317,30 @@
       "url": "https://mcp.context7.com/mcp",
       "enabled": true
     },
-    "grep_app": {
-      "type": "remote",
-      "url": "https://mcp.grep.app",
-      "enabled": true
-    },
     "websearch": {
       "type": "remote",
       "url": "https://mcp.exa.ai/mcp",
+      "enabled": true
+    },
+    "tavily": {
+      "type": "remote",
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey={env:TAVILY_API_KEY}",
       "enabled": true
     },
     "deepwiki": {
       "type": "remote",
       "url": "https://mcp.deepwiki.com/mcp",
       "enabled": true
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
     }
   },
   "agent": {
     "compaction": {
-      "model": "regolo/gpt-oss-120b"
+      "model": "regolo/qwen3.5-122b"
     }
   }
 }
